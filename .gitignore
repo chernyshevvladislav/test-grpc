@@ -1,0 +1,6 @@
+.idea
+.git
+.env
+.data
+docs/swagger
+internals/repository/mocks

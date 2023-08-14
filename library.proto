@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "github.com/chernyshevvladislav/test-grpc/library/.bin/proto/library";
+
+message Book {
+  string title = 1;
+}
+
+message Author {
+  string name = 1;
+}
+
+message GetAuthorsByBookTitleRequest {
+  string title = 1;
+}
+
+message GetAuthorsByBookTitleResponse {
+  repeated Author authors = 1;
+}
+
+message GetBooksByAuthorNameRequest {
+  string name = 1;
+}
+
+message GetBooksByAuthorNameResponse{
+  repeated Book books = 1;
+}
+
+service Library {
+  rpc GetAuthorsByBookTitle (GetAuthorsByBookTitleRequest) returns (GetAuthorsByBookTitleResponse);
+  rpc GetBooksByAuthorName (GetBooksByAuthorNameRequest) returns (GetBooksByAuthorNameResponse);
+}
